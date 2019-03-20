@@ -7,23 +7,32 @@ public class PrincipalTriangulo {
     public static void main(String[] args) {
 
         Triangulo tri1, tri2;
-        String eleccion = JOptionPane.showInputDialog("QUE DESEA CALCULAR");
-        System.out.println("El mensaje ingresado es: " + eleccion);
+        String eleccion = JOptionPane.showInputDialog("QUE DESEA CALCULAR:"
+                + "\na) perimetro"
+                + "\nb) area");
+        System.out.println("CALCULAR: " + eleccion.substring(0,1).toUpperCase()+eleccion.substring(1) + " del triángulo:");
         switch (eleccion) {
             case "perimetro":
-                String ladA = JOptionPane.showInputDialog("Ingrese el 1er Lado del Triángulo:");
-                String ladB = JOptionPane.showInputDialog("Ingrese el 2do Lado del Triángulo:");
-                String ladC = JOptionPane.showInputDialog("Ingrese el 3er Lado del Triángulo:");
+                String ladA = JOptionPane.showInputDialog("Perímetro del lado A :");
+                System.out.println("Lado A = " + ladA);
+                String ladB = JOptionPane.showInputDialog("Perímetro del lado B :");
+                System.out.println("Lado B = " + ladB);
+                String ladC = JOptionPane.showInputDialog("Perímetro del lado C :");
+                System.out.println("Lado C = " + ladC);
                 tri1 = new Triangulo(Integer.parseInt(ladA), Integer.parseInt(ladB), Integer.parseInt(ladC));
                 double perimetro = tri1.perimetro();
                 System.out.println("El perímetro es: " + perimetro);
                 break;
             case "area":
                 tri2 = new Triangulo();
-                String numBAse = JOptionPane.showInputDialog("Ingrese la base: ");
-                String numAltura = JOptionPane.showInputDialog("Ingrese la altura: ");
+                String numBAse = JOptionPane.showInputDialog("Ingrese la BASE: ");
+                System.out.println("Base = " + numBAse);
+                String numAltura = JOptionPane.showInputDialog("Ingrese la ALTURA: ");
+                System.out.println("Altura = " + numAltura);
                 tri2.base = Integer.parseInt(numBAse);
                 tri2.altura = Integer.parseInt(numAltura);
+                double area = tri2.area();
+                System.out.println("El area es: " + area);
         }
        
 //        System.out.println("HALLAMOS EL PERÍMETRO:");
