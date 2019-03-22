@@ -10,7 +10,9 @@ public class PrincipalTriangulo {
         String eleccion = JOptionPane.showInputDialog("QUE DESEA CALCULAR:"
                 + "\na) perimetro"
                 + "\nb) area");
-        System.out.println("CALCULAR: " + eleccion.substring(0,1).toUpperCase()+eleccion.substring(1) + " del triángulo:");
+        
+            System.out.println("CALCULAR: " + eleccion.substring(0, 1).toUpperCase() + eleccion.substring(1) + " del triángulo:");
+
         switch (eleccion) {
             case "perimetro":
                 String ladA = JOptionPane.showInputDialog("Perímetro del lado A :");
@@ -20,8 +22,13 @@ public class PrincipalTriangulo {
                 String ladC = JOptionPane.showInputDialog("Perímetro del lado C :");
                 System.out.println("Lado C = " + ladC);
                 tri1 = new Triangulo(Integer.parseInt(ladA), Integer.parseInt(ladB), Integer.parseInt(ladC));
-                double perimetro = tri1.perimetro();
-                System.out.println("El perímetro es: " + perimetro);
+                if (tri1.validaTriangle() == 1) {
+                    double perimetro = tri1.perimetro();
+                    System.out.println("El perímetro es: " + perimetro);
+                } else {
+                    System.out.println("Los datos ingresados indican que NOSE TRATA DE UN TRIÁNGULO");
+                }
+
                 break;
             case "area":
                 tri2 = new Triangulo();
@@ -34,7 +41,7 @@ public class PrincipalTriangulo {
                 double area = tri2.area();
                 System.out.println("El area es: " + area);
         }
-       
+
 //        System.out.println("HALLAMOS EL PERÍMETRO:");
 //        tri1 = new Triangulo(15, 8, 3);
 //        double perimetro = tri1.perimetro();
@@ -51,7 +58,9 @@ public class PrincipalTriangulo {
 //                + "\nBase: " + tri2.base
 //                + "\nAltura: " + tri2.altura
 //                + "\nEs: " + area);
-
+        
+// Triang Normal:  A=7 B=10 C=5
+// Tiangulo NO EXISTE: A=
     }
 
 }
